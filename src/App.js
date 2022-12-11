@@ -64,6 +64,7 @@ const getAspectRatio = ({ width, height }) => {
 };
 
 export function EdtechComponent({
+  //Properties
   roomId = "",
   tokenEndpoint = defaultTokenEndpoint,
   themeConfig: {

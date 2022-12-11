@@ -1,10 +1,11 @@
-import React, { Fragment, useState } from "react";
+import React, {Fragment, useState } from "react";
 import {
   HMSPlaylistType,
   selectIsAllowedToPublish,
   useHMSStore,
   useScreenShare,
 } from "@100mslive/react-sdk";
+import { FaCamera } from "react-icons/fa";
 import { MusicIcon } from "@100mslive/react-icons";
 import { Flex, Footer as AppFooter, Tooltip } from "@100mslive/react-ui";
 import { Playlist } from "../../components/Playlist/Playlist";
@@ -22,6 +23,7 @@ import { VirtualBackground } from "../../plugins/VirtualBackground/VirtualBackgr
 import { ToggleWhiteboard } from "../../plugins/whiteboard";
 import { isScreenshareSupported } from "../../common/utils";
 import { FeatureFlags } from "../../services/FeatureFlags";
+import { CaptureScreenshot } from "./CaptureScreenshot";
 
 const TranscriptionButton = React.lazy(() =>
   import("../../plugins/transcription")
@@ -72,6 +74,7 @@ export const ConferencingFooter = () => {
     <AppFooter.Root>
       <AppFooter.Left>
         <ScreenshareAudio />
+        <CaptureScreenshot />
         <Playlist type={HMSPlaylistType.audio} />
         <Playlist type={HMSPlaylistType.video} />
         {FeatureFlags.enableWhiteboard ? <ToggleWhiteboard /> : null}
