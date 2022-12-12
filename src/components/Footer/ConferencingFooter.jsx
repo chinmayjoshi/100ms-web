@@ -5,7 +5,6 @@ import {
   useHMSStore,
   useScreenShare,
 } from "@100mslive/react-sdk";
-import { FaCamera } from "react-icons/fa";
 import { MusicIcon } from "@100mslive/react-icons";
 import { Flex, Footer as AppFooter, Tooltip } from "@100mslive/react-ui";
 import { Playlist } from "../../components/Playlist/Playlist";

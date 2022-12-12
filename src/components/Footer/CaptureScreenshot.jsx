@@ -15,14 +15,17 @@ const downloadImage = (blob, fileName) => {
 
   fakeLink.remove();
 };
-// You can use the query-selector to specifically target the element you want to capture
+// You can use the query-selector to specifically target
 export const CaptureScreenshot = () => {
   console.log("CaptureScreenshot");
   const getImage = async () => {
-    html2canvas(document.querySelector('[data-testid="conferencing"]')).then(function (canvas) {
-      const image = canvas.toDataURL("image/png", 1.0);
-      downloadImage(image, "screenshot.png");
-    });
+    html2canvas(document.querySelector('[data-testid="conferencing"]')).then(
+      function (canvas) {
+        //TODO : Flip the image if required
+        const image = canvas.toDataURL("image/png", 1.0);
+        downloadImage(image, "screenshot.png");
+      }
+    );
   };
   return (
     <Fragment>
