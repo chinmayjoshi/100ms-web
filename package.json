@@ -18,6 +18,7 @@
     "@emoji-mart/data": "^1.0.6",
     "@emoji-mart/react": "^1.0.1",
     "@tldraw/tldraw": "^1.18.4",
+    "@wmik/use-media-recorder": "^1.6.5-beta.0",
     "emoji-mart": "^5.2.2",
     "eventemitter2": "^6.4.7",
     "hls.js": "^1.2.5",

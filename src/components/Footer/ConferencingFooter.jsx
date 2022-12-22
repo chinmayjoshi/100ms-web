@@ -5,7 +5,7 @@ import {
   useHMSStore,
   useScreenShare,
 } from "@100mslive/react-sdk";
-import { MusicIcon } from "@100mslive/react-icons";
+import { MusicIcon, RecordIcon } from "@100mslive/react-icons";
 import { Flex, Footer as AppFooter, Tooltip } from "@100mslive/react-ui";
 import { Playlist } from "../../components/Playlist/Playlist";
 import IconButton from "../../IconButton";
@@ -23,6 +23,7 @@ import { ToggleWhiteboard } from "../../plugins/whiteboard";
 import { isScreenshareSupported } from "../../common/utils";
 import { FeatureFlags } from "../../services/FeatureFlags";
 import { CaptureScreenshot } from "./CaptureScreenshot";
+import { RecordView} from "./RecordView";
 
 const TranscriptionButton = React.lazy(() =>
   import("../../plugins/transcription")
@@ -74,6 +75,7 @@ export const ConferencingFooter = () => {
       <AppFooter.Left>
         <ScreenshareAudio />
         <CaptureScreenshot />
+        <RecordView/>
         <Playlist type={HMSPlaylistType.audio} />
         <Playlist type={HMSPlaylistType.video} />
         {FeatureFlags.enableWhiteboard ? <ToggleWhiteboard /> : null}
