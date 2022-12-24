@@ -4,17 +4,9 @@ import { Tooltip } from "@100mslive/react-ui";
 import IconButton from "../../IconButton";
 import { FaCamera } from "react-icons/fa";
 
-const downloadImage = (blob, fileName) => {
-  const fakeLink = window.document.createElement("a");
-  fakeLink.style = "display:none;";
-  fakeLink.download = fileName;
-  fakeLink.href = blob;
-  document.body.appendChild(fakeLink);
-  fakeLink.click();
-  document.body.removeChild(fakeLink);
+//Constants
+const url = "localhost:8080/api/v1/uploadImage";
 
-  fakeLink.remove();
-};
 // You can use the query-selector to specifically target
 export const CaptureScreenshot = () => {
   console.log("CaptureScreenshot");
@@ -23,7 +15,11 @@ export const CaptureScreenshot = () => {
       function (canvas) {
         //TODO : Flip the image if required
         const image = canvas.toDataURL("image/png", 1.0);
-        downloadImage(image, "screenshot.png");
+        fetch(url, {
+          method: "POST",
+          body: JSON.stringify({ image: image, sessionId: "123" }),
+          headers: { "Content-Type": "application/json" },
+        });
       }
     );
   };
