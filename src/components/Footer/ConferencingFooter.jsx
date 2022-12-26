@@ -75,7 +75,6 @@ export const ConferencingFooter = () => {
       <AppFooter.Left>
         <ScreenshareAudio />
         <CaptureScreenshot />
-        <RecordView/>
         <Playlist type={HMSPlaylistType.audio} />
         <Playlist type={HMSPlaylistType.video} />
         {FeatureFlags.enableWhiteboard ? <ToggleWhiteboard /> : null}
