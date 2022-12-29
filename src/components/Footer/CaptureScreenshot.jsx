@@ -5,7 +5,7 @@ import IconButton from "../../IconButton";
 import { FaCamera } from "react-icons/fa";
 
 //Constants
-const url = "localhost:8080/api/v1/uploadImage";
+const url = "http://localhost:8080/api/v1/capturedImages/create";
 
 // You can use the query-selector to specifically target
 export const CaptureScreenshot = () => {
