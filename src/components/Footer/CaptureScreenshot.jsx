@@ -3,9 +3,14 @@ import React, { Fragment } from "react";
 import { Tooltip } from "@100mslive/react-ui";
 import IconButton from "../../IconButton";
 import { FaCamera } from "react-icons/fa";
+import { ToastContainer, toast } from "react-toastify";
 
 //Constants
 const url = "http://localhost:8080/api/v1/capturedImages/create";
+
+function handleAPISuccess(response) {
+  toast.success("Image captured successfully");
+}
 
 // You can use the query-selector to specifically target
 export const CaptureScreenshot = () => {
@@ -19,12 +24,17 @@ export const CaptureScreenshot = () => {
           method: "POST",
           body: JSON.stringify({ image: image, sessionId: "123" }),
           headers: { "Content-Type": "application/json" },
-        });
+        })
+          .then(response => response.json())
+          .then(data => {
+            handleAPISuccess(data);
+          });
       }
     );
   };
   return (
     <Fragment>
+      <ToastContainer />
       <Tooltip title="Capture screenshot" key="captureScreenshot">
         <IconButton onClick={getImage} data-testid="capture_screenshot">
           <FaCamera />
