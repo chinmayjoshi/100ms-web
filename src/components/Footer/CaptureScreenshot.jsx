@@ -8,6 +8,8 @@ import { ToastContainer, toast } from "react-toastify";
 //Constants
 const url = "http://localhost:8080/api/v1/capturedImages/create";
 
+//TODO : Fix toast container
+
 function handleAPISuccess(response) {
   toast.success("Image captured successfully");
 }
@@ -34,7 +36,6 @@ export const CaptureScreenshot = () => {
   };
   return (
     <Fragment>
-      <ToastContainer />
       <Tooltip title="Capture screenshot" key="captureScreenshot">
         <IconButton onClick={getImage} data-testid="capture_screenshot">
           <FaCamera />

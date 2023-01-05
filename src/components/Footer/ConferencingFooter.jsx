@@ -23,6 +23,7 @@ import { ToggleWhiteboard } from "../../plugins/whiteboard";
 import { isScreenshareSupported } from "../../common/utils";
 import { FeatureFlags } from "../../services/FeatureFlags";
 import { CaptureScreenshot } from "./CaptureScreenshot";
+import { RecordScreen } from "./RecordScreen";
 
 const TranscriptionButton = React.lazy(() =>
   import("../../plugins/transcription")
